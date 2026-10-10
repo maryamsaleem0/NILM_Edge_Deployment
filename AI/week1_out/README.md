@@ -41,3 +41,12 @@ Attention memory grows with window^2 (129 x 129 per head, 8 heads).
 
 ## Check
 onnxruntime vs PyTorch: max abs difference 2.6e-08 (allclose True).
+
+## Operators inside the final ONNX (after simplification, 189 nodes, opset 13)
+Add, BatchNormalization, Concat, Constant, Conv, Div, Einsum, Erf, Gather, Gemm, MatMul, Mul,
+Pad, Pow, ReduceMean, Reshape, Slice, Softmax, Sqrt, Sub, Transpose, Unsqueeze, Where
+
+Likely trouble spots: Einsum (attention), Where (diagonal mask), Erf (this is GELU).
+LayerNorm is exported as ReduceMean/Sub/Pow/Sqrt/Div (no single LayerNorm node).
+Input [1, 9, 128] and output [1, 1, 128] are fully fixed, with no dynamic or symbolic dimensions.
+The file was simplified with onnxsim; results are identical to PyTorch (max diff 2.6e-08).
