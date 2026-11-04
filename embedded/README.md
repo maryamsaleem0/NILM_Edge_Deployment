@@ -1,4 +1,4 @@
-# NILM Edge Deployment (Group 05)
+# NILM Edge Deployment 
 
 **Current Status:** Hardware Integration & Benchmarking
 
