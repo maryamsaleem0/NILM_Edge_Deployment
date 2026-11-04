@@ -1,13 +1,11 @@
-# Week 1 – Feasibility test
+# NILM Edge Deployment (Group 05)
 
-Model tested: nilmformer_untrained_w128_4d_conv2d_v4.onnx (untrained weights)
-Board: STM32H747I-DISCO
-Tools: ST Edge AI Core 2.2.0, X-CUBE-AI 10.2.0, STM32CubeIDE 1.x
+**Current Status:** Hardware Integration & Benchmarking
 
-Files:
-- feasibility_report.pdf : 1-page summary and decision
-- nilm_analyze_report.txt / analyze_log.txt : Analyze results (Flash, RAM, MACs)
-- nilm_validate_report.txt / validation_log.txt : desktop validation (cos 0.99999)
-- nilm_val_io.npz : input and output samples from the validation
+Deploying the NILMFormer Transformer model onto an STM32H747I-DISCO board as an edge AI device to benchmark edge-versus-cloud performance metrics.
 
-Known issue: output positions 0 and 127 differ (replicate padding in head). Fix requested (v5).
+### Technical Milestones Achieved:
+* **Model Quantization:** Successfully imported `v7_int8_qdq` ONNX model using X-CUBE-AI 10.2.0.
+* **Memory Management:** Overcame internal 512 KiB `RAM_D1` limit by configuring the FMC driver to initialize 32 MB of external SDRAM. 
+* **Linker Optimization:** Modified the GCC linker script (`STM32H747XIHX_FLASH.ld`) to map the 534.5 KiB activation pool to SDRAM (`0xD0000000`). 
+* **Hardware Validation:** Target validation firmware successfully compiled, flashed, and booted on the Cortex-M7 at 400 MHz.
