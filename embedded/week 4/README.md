@@ -1,4 +1,4 @@
-# Embedded Module - Week 3 Initialization
+# Embedded Module - Week 4
 
 ## Hardware Platform Finalization
 The target hardware platform has been officially finalized as the **STM32H747I-DISCO** microcontroller. The base `.ioc` configuration file has been generated and the edge deployment environment is now initialized using **STM32Cube.AI** for the Cortex-M7 core.
