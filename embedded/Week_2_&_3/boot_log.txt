@@ -1,0 +1,50 @@
+
+#
+# AI Validation 7.1
+#
+Compiled with GCC 11.3.1
+STM32 device configuration...
+ Device       : DevID:0x0450 (STM32H743/53/50xx and STM32H745/55/47/57xx) RevID:0x2003
+ Core Arch.   : M7 - FPU  used
+ HAL version  : 0x010b0300
+ SYSCLK clock : 400 MHz
+ HCLK clock   : 200 MHz
+ FLASH conf.  : ACR=0x00000032 - latency=2
+ CACHE conf.  : $I/$D=(True,True)
+ Timestamp    : SysTick + DWT (delay(1)=1.001 ms)
+
+ST.AI RT
+--------------------------------------------------
+ tools version   : v2.1.0
+ network rt lib  : v10.1.0-ae536891
+   compiled with : GCC 12.3.1
+
+Discovering the network(s)...
+
+Found network "nilm_v7"
+Creating the network "nilm_v7"..
+Initializing the network
+Network informations...
+ model name         : nilm_v7
+ model signature    : 0x26a71819deed263ce0b668d215bc35c8
+ model datetime     : 2026-11-04T17:14:09+0500
+ compile datetime   : Nov  4 2026 18:01:58
+ tools version      : 2.2.0
+ complexity         : 1301413931 MACC
+ c-nodes            : 770
+ map_activations    : 1
+  [0]  @0xD0000000/534512
+ map_weights        : 1
+  [0]  @0x8021220/649028
+ n_inputs/n_outputs : 1/1
+  I[0] (1,9,1,128)1152/float32 @0xD004FCD8/4608
+  O[0] (1,1,128,1)128/float32 @0xD0000000/512
+
+-------------------------------------------
+| READY to receive a CMD from the HOST... |
+-------------------------------------------
+
+# Note: At this point, default ASCII-base terminal should be closed
+# and a serial COM interface should be used
+# (i.e. Python ai_runner module). Protocol version = 3.1
+
