@@ -121,3 +121,5 @@ the model before the per-head patch in the export script; the patch does not cha
 - Untrained weights; random calibration; no accuracy claim.
 - Window 128 only (64 and 96 crash the tool). A different window means retraining and separate reporting.
 - Full-model timing on the board is not measured yet (only one QK^T matmul).
+
+Model config matches the paper (3 layers, d_model 96, 8 heads, ratio 4, dropout 0.2, kernel 3, 383,283 parameters vs 0.385 M reported). The repo uses dilations 1, 2, 4, 8 (the paper's table lists 1, 2, 3, 4), and the head maps 96 channels directly to 1 output
