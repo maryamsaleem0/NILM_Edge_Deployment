@@ -1,0 +1,26 @@
+{
+  "_notes": "Shared constants for all three modules. Change values HERE only. Plan update 23 Nov 2026: kettle, fridge, microwave (dishwasher dropped).",
+
+  "dataset": "UKDALE",
+  "appliances": ["kettle", "fridge", "microwave"],
+
+  "window_size": 128,
+  "sampling_rate": "1min",
+  "power_divisor_w": 6000,
+
+  "exo_variables": ["minute", "hour", "dow", "month"],
+
+  "train_houses": [1, 3, 4, 5],
+  "test_houses": [2],
+  "train_mode": "official",
+  "_train_mode_help": "official = train_houses for every appliance (houses without the appliance give all-zero targets, as in the paper's code). with_appliance = only train houses that really have the appliance channel.",
+
+  "valid_fraction": 0.2,
+  "valid_mode": "random",
+  "_valid_mode_help": "random = random 20% of the training windows (what the official script does). time = last 20% of the windows of each training house.",
+
+  "seed": 0,
+
+  "data_dir": "/content/NILMFormer/data/UKDALE/",
+  "out_dir": "/content/drive/MyDrive/FYP_NILM/processed"
+}
